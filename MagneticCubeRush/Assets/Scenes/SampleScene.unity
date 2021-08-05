@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: c72cb4a83384c974a9109e69ad46f9f9, type: 2}
 --- !u!1 &146062526
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871030808239480815, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 12.77
+      value: 11.76
       objectReference: {fileID: 0}
     - target: {fileID: 1871030808239480815, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
       propertyPath: m_LocalRotation.w
@@ -764,7 +764,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7826997017327637190, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
       propertyPath: m_Radius
-      value: 0.02
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456683909256765711, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456683909256765711, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
+      propertyPath: navAgent
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456683909256765711, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
+      propertyPath: attackTarget
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
@@ -880,7 +892,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!64 &2044515579
 MeshCollider:
