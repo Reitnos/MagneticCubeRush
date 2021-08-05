@@ -46,9 +46,20 @@ public class TouchControl : MonoBehaviour
             rotation = -rotation;
         }
 
-        rb.velocity = transform.forward * movement;
-        Vector3 eulerRotation = new Vector3(0, rotation, 0);
+       // rb.velocity = transform.forward * movement;
+       Vector3 movementVec = transform.forward * movement;
+       movementVec.y = rb.velocity.y;
+       rb.velocity = movementVec;
+
+       Vector3 eulerRotation = new Vector3(0, rotation, 0);
         Quaternion deltaRotation = Quaternion.Euler(eulerRotation * Time.fixedDeltaTime) ;
         rb.MoveRotation(rb.rotation * deltaRotation);
+
+        
+
+        
+        
     }
+
+   
 }
