@@ -7,7 +7,7 @@ using UnityEngine.AI;
 
 public class ExplosionState : INPCState
 {
-    public static event Action HasExploded;
+    public event Action HasExploded;
     public INPCState ChangeState(NPCBomb_StateManager npc)
     {
         if (npc.navAgent == null)
