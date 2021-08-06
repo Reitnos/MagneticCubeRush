@@ -510,6 +510,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCBomb (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7593588835837321268, guid: 9f93fc946f9260040a41bf18759183c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7593588835837321272, guid: 9f93fc946f9260040a41bf18759183c0,
         type: 3}
       propertyPath: m_RootOrder
@@ -744,7 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068597e4445df8a4a84fc3263ad8ff4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 5
+  spawnTime: 3
   countTime: 0
   prefab: {fileID: 7593588835837321268, guid: 9f93fc946f9260040a41bf18759183c0, type: 3}
 --- !u!1 &705507993
@@ -851,6 +856,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPCBomb
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593588835837321268, guid: 9f93fc946f9260040a41bf18759183c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7593588835837321272, guid: 9f93fc946f9260040a41bf18759183c0,
         type: 3}
@@ -986,6 +996,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NPCBomb (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593588835837321268, guid: 9f93fc946f9260040a41bf18759183c0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7593588835837321272, guid: 9f93fc946f9260040a41bf18759183c0,
         type: 3}
@@ -1825,6 +1840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d037298e0aa729a41b94dcb68e2ab210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listSize: 0
 --- !u!1 &2044515578
 GameObject:
   m_ObjectHideFlags: 0

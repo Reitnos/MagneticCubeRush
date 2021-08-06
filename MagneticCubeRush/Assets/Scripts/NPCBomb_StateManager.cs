@@ -22,7 +22,7 @@ public class NPCBomb_StateManager : MonoBehaviour
     public float explosionDistance = 3f;
     
     public GameObject player;
-    private void Awake()
+    private void OnEnable()
     {
         player = GameObject.Find("Player");
         currentState = wanderState;
@@ -33,6 +33,6 @@ public class NPCBomb_StateManager : MonoBehaviour
     void Update()
     {
         currentState = currentState.ChangeState(this);
-        currentStateName = currentState.ToString();
+       // currentStateName = currentState.ToString();
     }
 }
