@@ -10,14 +10,17 @@ public class NPCBomb_StateManager : MonoBehaviour
     private INPCState currentState;
     public WanderState wanderState = new WanderState();
     public AttackState attackState = new AttackState();
+    public ExplosionState explosionState = new ExplosionState();
 
     public NavMeshAgent navAgent;
     public Vector3 nextLocation;
 
     public GameObject attackTarget;
     
-    public float wanderDistance = 10f;
-    public float attackDistance = 25f;
+    public float wanderDistance = 5f;
+    public float attackDistance = 15f;
+    public float explosionDistance = 3f;
+    
     public GameObject player;
     private void Awake()
     {

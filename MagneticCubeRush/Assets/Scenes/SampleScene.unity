@@ -262,8 +262,8 @@ GameObject:
   m_Name: Wallleft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &535763456
 Transform:
@@ -450,8 +450,8 @@ GameObject:
   m_Name: Wallback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &961826947
 Transform:
@@ -628,8 +628,8 @@ GameObject:
   m_Name: Wallfront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1326350776
 Transform:
@@ -718,6 +718,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPCBomb
       objectReference: {fileID: 0}
+    - target: {fileID: 1871030808239480803, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1871030808239480815, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -778,6 +782,18 @@ PrefabInstance:
       propertyPath: attackTarget
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8456683909256765711, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
+      propertyPath: attackDistance
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456683909256765711, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
+      propertyPath: wanderDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8456683909256765711, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
+      propertyPath: explosionDistance
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
 --- !u!1 &1838293965
@@ -796,8 +812,8 @@ GameObject:
   m_Name: Wallright
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &1838293966
 Transform:
@@ -875,6 +891,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838293965}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2001086348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1871030808239480803, guid: fa823f93ae2504b4bb91fb6f2ba02b30, type: 3}
+  m_PrefabInstance: {fileID: 1403250642}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2001086356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001086348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300c76ac68ab38c4b8f599a45f205f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2044515578
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,15 +5,17 @@ using UnityEngine.AI;
 
 public class AttackState :  INPCState
 {
+    private float distanceToExplosion;
     public INPCState ChangeState(NPCBomb_StateManager npc)
     {
         if (npc.navAgent == null)
             npc.navAgent = npc.GetComponent<NavMeshAgent>();
 
         MoveToPlayer(npc);
-
-        if (!npc.attackTarget.activeSelf)
-            return npc.wanderState;
+        distanceToExplosion = (npc.player.transform.position - npc.gameObject.transform.position).magnitude;
+        
+        if (distanceToExplosion < npc.explosionDistance) // if bomb is close enough to player, go to explosion state.
+            return npc.explosionState;
         else
             return npc.attackState;
     }
