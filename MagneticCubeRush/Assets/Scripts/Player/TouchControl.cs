@@ -13,12 +13,10 @@ public class TouchControl : MonoBehaviour
     public float rotationSpeed = 200.0f;
     
     private bool goingForward = true;
-    private Rigidbody rb;
+   
+    public Player player;
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    
 
     void FixedUpdate()
     {
@@ -46,20 +44,10 @@ public class TouchControl : MonoBehaviour
             rotation = -rotation;
         }
 
-       // rb.velocity = transform.forward * movement;
-       Vector3 movementVec = transform.forward * movement;
-       movementVec.y = rb.velocity.y;
-       rb.velocity = movementVec;
-
-       Vector3 eulerRotation = new Vector3(0, rotation, 0);
-        Quaternion deltaRotation = Quaternion.Euler(eulerRotation * Time.fixedDeltaTime) ;
-        rb.MoveRotation(rb.rotation * deltaRotation);
-
-        
-
-        
-        
+       player.Move(movement, rotation);
     }
 
-   
+
 }
+
+

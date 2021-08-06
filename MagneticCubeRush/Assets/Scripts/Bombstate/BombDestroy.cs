@@ -11,7 +11,9 @@ public class BombDestroy : MonoBehaviour
     [Header("Explosion Parameters:")]
     public float explosionRadius = 5f;
     public float force = 700f;
-    private Rigidbody playerRb;
+
+    private IExplosionMove _explosionEffectedObject;
+   
     private ExplosionState _explosionState;
     private void Start()
     {
@@ -32,11 +34,15 @@ public class BombDestroy : MonoBehaviour
     {
         foreach (Collider effectedObject in effectedColliders)
         {
-            if (effectedObject.CompareTag("Player"))
+            _explosionEffectedObject = effectedObject.GetComponent<IExplosionMove>();
+            if (_explosionEffectedObject != null)
             {
-                playerRb = effectedObject.GetComponent<Rigidbody>();
-                playerRb.AddExplosionForce(force, transform.position, explosionRadius);
+                //TODO this script should care about player's rigidbody
+                //player.AddForce(force,transform.position, explosionRadius);
+                
+                _explosionEffectedObject.AddObjectForce(force,transform.position,explosionRadius);
             }
+            
         }
     }
 
