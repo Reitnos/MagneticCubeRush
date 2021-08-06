@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7593588835837321274}
   - component: {fileID: 2020409903407082769}
   - component: {fileID: 417367462508191448}
+  - component: {fileID: 3407996238750842831}
   - component: {fileID: 8112922789771247505}
   m_Layer: 0
   m_Name: NPCBomb
@@ -157,6 +158,18 @@ MonoBehaviour:
   attackDistance: 15
   explosionDistance: 3
   player: {fileID: 0}
+--- !u!114 &3407996238750842831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7593588835837321268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24bef356eb2e804c8f95ea1ebcb504f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8112922789771247505
 MonoBehaviour:
   m_ObjectHideFlags: 0

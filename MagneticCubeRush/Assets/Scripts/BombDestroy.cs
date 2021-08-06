@@ -25,7 +25,7 @@ public class BombDestroy : MonoBehaviour
         
         Collider[] effectedColliders = Physics.OverlapSphere(transform.position, explosionRadius);
         AddExplosionForce(effectedColliders);
-        Destroy(this.gameObject);
+        gameObject.SetActive(false);
     }
 
     private void AddExplosionForce(Collider[] effectedColliders)
