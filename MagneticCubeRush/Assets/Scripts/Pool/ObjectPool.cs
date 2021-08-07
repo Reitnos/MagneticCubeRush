@@ -7,6 +7,7 @@ public class ObjectPool : MonoBehaviour
 {
     [SerializeField] private int listSize;
     private Dictionary<string, Queue<GameObject>> objectPool = new Dictionary<string, Queue<GameObject>>();
+    
 
     private void Update()
     {
