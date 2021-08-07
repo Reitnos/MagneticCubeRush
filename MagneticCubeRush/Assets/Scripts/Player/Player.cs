@@ -12,7 +12,8 @@ public class Player : MonoBehaviour
     }
     public void Move(float movement, float rotation)
     {
-        // rb.velocity = transform.forward * movement;
+        // moving and rotating the player according to the given speed parameters.
+        // using rigidbody so that unwanted behaviours like passing inside a wall wont happen.
         Vector3 movementVec = transform.forward * movement;
         movementVec.y = rb.velocity.y;
         rb.velocity = movementVec;

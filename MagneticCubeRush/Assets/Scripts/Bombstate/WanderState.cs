@@ -54,11 +54,11 @@ public class WanderState : INPCState
         {
             Vector3 direction = playerTransform.transform.position - (npc.transform.position + Vector3.up);
             Ray ray = new Ray(npc.transform.position + Vector3.up, direction);
-            // Debug.DrawRay(npc.transform.position + Vector3.up, direction, Color.blue);
+           
 
             if (Physics.Raycast(ray, out RaycastHit hit, npc.attackDistance))
             {
-                // Debug.Log("I hit" + hit.collider.name);
+                
 
                 if (hit.collider.gameObject == npc.player)
                 {

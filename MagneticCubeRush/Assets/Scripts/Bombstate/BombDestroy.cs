@@ -23,14 +23,16 @@ public class BombDestroy : MonoBehaviour
 
     private void DestroyBomb()
     {
-        PlayExplosionEffect();
+        PlayExplosionEffect(); // play particle effect.
         
         Collider[] effectedColliders = Physics.OverlapSphere(transform.position, explosionRadius);
         AddExplosionForce(effectedColliders);
         gameObject.SetActive(false);
     }
 
-    private void AddExplosionForce(Collider[] effectedColliders)
+    // check every effected collider, if player is effected, add force to player.
+    // if neutral cubes are effected, increase the enemy score.
+    private void AddExplosionForce(Collider[] effectedColliders) 
     {
         foreach (Collider effectedObject in effectedColliders)
         {

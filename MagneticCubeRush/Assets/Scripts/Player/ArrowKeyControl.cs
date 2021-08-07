@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TouchControl : MonoBehaviour
+public class ArrowKeyControl : MonoBehaviour
 {
     // this script allows player to control the collector by arrow keys
     // rotating with left and right, moving with up and down keys.
@@ -20,15 +20,16 @@ public class TouchControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        ArrowkeyMovementControl();
+        ArrowKeyMovementControl();
     }
 
-    private void ArrowkeyMovementControl()
+    private void ArrowKeyMovementControl()
     {
         float movement = Input.GetAxis("Vertical") * moveSpeed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed ;
        
         // check if player is trying to go back or forward, so that while going back, rotation is arranged accordingly.
+        
         if (Input.GetKey(KeyCode.UpArrow))
         {
             goingForward = true;

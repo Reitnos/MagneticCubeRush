@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class NPCBomb_StateManager : MonoBehaviour
 {
-    [SerializeField]private string currentStateName;
+    // State Manager to control the NPC states and behaviours.
     private INPCState currentState;
     public WanderState wanderState = new WanderState();
     public AttackState attackState = new AttackState();
@@ -29,10 +29,10 @@ public class NPCBomb_StateManager : MonoBehaviour
         navAgent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         currentState = currentState.ChangeState(this);
-       // currentStateName = currentState.ToString();
+       
     }
 }

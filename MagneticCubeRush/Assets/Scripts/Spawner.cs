@@ -3,8 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// spawner class is attached to a empty GameObject called spawner.
+// basically it periodically spawns new npc bombs from the object pool of the game.
 public class Spawner : MonoBehaviour
 {
+    
     [SerializeField] private float spawnTime = 5f;
     [SerializeField] private float countTime;
 
