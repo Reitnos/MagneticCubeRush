@@ -8,6 +8,7 @@ public class BombDestroy : MonoBehaviour
     [Header("Explosion Particle:")]
     [SerializeField] private GameObject explosionEffect;
     
+    
     [Header("Explosion Parameters:")]
     public float explosionRadius = 5f;
     public float force = 700f;
@@ -15,8 +16,11 @@ public class BombDestroy : MonoBehaviour
     private IExplosionMove _explosionEffectedObject;
    
     private ExplosionState _explosionState;
+    
+    private ObjectPool _objectPool;
     private void Start()
     {
+        _objectPool = FindObjectOfType<ObjectPool>();
         _explosionState = gameObject.GetComponent<NPCBomb_StateManager>().explosionState;
         _explosionState.HasExploded += DestroyBomb;
     }
@@ -50,6 +54,9 @@ public class BombDestroy : MonoBehaviour
 
     private void PlayExplosionEffect()
     {
-        Instantiate(explosionEffect, transform.position, transform.rotation);
+        // Taking the queued particle effect from object pool.
+        GameObject newExplosionEffect = _objectPool.GetObject(explosionEffect);
+        newExplosionEffect.transform.position = transform.position;
+      
     }
 }

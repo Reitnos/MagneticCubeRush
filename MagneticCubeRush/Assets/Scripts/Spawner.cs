@@ -3,9 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
-
-
+using UnityEngine.Serialization;
 
 
 // spawner class is attached to a empty GameObject called spawner.
@@ -20,7 +18,7 @@ public class Spawner : MonoBehaviour
     private ObjectPool _objectPool;
     private Vector3 _spawnPosition;
 
-    [SerializeField] private GameObject prefab;
+    [SerializeField] private GameObject bombPrefab;
 
     private void Start()
     {
@@ -37,7 +35,7 @@ public class Spawner : MonoBehaviour
 
     private void SpawnObject()
     {
-        GameObject newPooledObject = _objectPool.GetObject(prefab);
+        GameObject newPooledObject = _objectPool.GetObject(bombPrefab);
         Vector3 _randomPosition = UnityEngine.Random.insideUnitSphere * spawnRadius;
         _spawnPosition = transform.position + _randomPosition;
         if (NavMesh.SamplePosition(_spawnPosition, out NavMeshHit hit, 5f, NavMesh.AllAreas))
