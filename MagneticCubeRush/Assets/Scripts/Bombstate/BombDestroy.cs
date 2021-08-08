@@ -14,6 +14,7 @@ public class BombDestroy : MonoBehaviour
     public float force = 700f;
 
     private IExplosionMove _explosionEffectedObject;
+    private NeutralCubeCollect _neutralCube;
    
     private ExplosionState _explosionState;
     
@@ -40,6 +41,7 @@ public class BombDestroy : MonoBehaviour
     {
         foreach (Collider effectedObject in effectedColliders)
         {
+            _neutralCube = effectedObject.GetComponent<NeutralCubeCollect>();
             _explosionEffectedObject = effectedObject.GetComponent<IExplosionMove>();
             if (_explosionEffectedObject != null)
             {
@@ -48,6 +50,14 @@ public class BombDestroy : MonoBehaviour
                 
                 _explosionEffectedObject.AddObjectForce(force,transform.position,explosionRadius);
             }
+
+            if (_neutralCube != null)
+            {
+                _neutralCube.CollectedByNPC(1);
+            }
+            
+            
+            
             
         }
     }
