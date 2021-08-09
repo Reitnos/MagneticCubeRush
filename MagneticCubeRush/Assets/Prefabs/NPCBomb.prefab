@@ -150,7 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea8286893a55f049a5870d90554a9b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStateName: 
   navAgent: {fileID: 0}
   nextLocation: {x: 0, y: 0, z: 0}
   attackTarget: {fileID: 0}
@@ -184,5 +183,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionEffect: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,
     type: 3}
-  explosionRadius: 10
+  explosionRadius: 5
   force: 70000

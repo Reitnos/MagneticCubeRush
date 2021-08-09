@@ -9,11 +9,17 @@ public class MoveToPlayer : MonoBehaviour
     public float followPlayerDistance = 10f;
     private Rigidbody rb;
     public float followSpeed = 10f;
+    private bool detectedByPlayer = false;
    
     private GameObject player;
     void FixedUpdate()
     {
-        SeeAndFollowPlayer();
+        Vector3 destination = (player.transform.position - this.gameObject.transform.position);
+        CanSeePlayer(destination);
+        if (detectedByPlayer)
+        {
+            FollowPlayer(destination);
+        }
     }
 
     private void Start()
@@ -23,7 +29,7 @@ public class MoveToPlayer : MonoBehaviour
         
     }
 
-    void SeeAndFollowPlayer()
+    void CanSeePlayer(Vector3 destination)
     {
         
         /*
@@ -47,7 +53,7 @@ public class MoveToPlayer : MonoBehaviour
             }
         }
         */
-        Vector3 destination = (player.transform.position - this.gameObject.transform.position);
+       
         float distance = destination.magnitude;
         if (distance < followPlayerDistance)
         {
@@ -59,12 +65,17 @@ public class MoveToPlayer : MonoBehaviour
             {
                 if (hit.collider.gameObject == player)
                 {
-                   rb.MovePosition(transform.position + destination * Time.deltaTime * followSpeed);
-            
+                    detectedByPlayer = true;
+
                 }
             }
         }
 
 
+    }
+
+    void FollowPlayer(Vector3 destination)
+    {
+        rb.MovePosition(transform.position + destination * Time.deltaTime * followSpeed);
     }
 }

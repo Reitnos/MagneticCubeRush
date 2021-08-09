@@ -55,6 +55,7 @@ public class BombDestroy : MonoBehaviour
             if (_neutralCube != null)
             {
                 _neutralCube.CollectedByNPC(1);
+                _neutralCube.DestroyCube();
             }
             
             

@@ -15,4 +15,9 @@ public class NeutralCubeCollect : MonoBehaviour
    {
       ScoreTexts.Instance().IncreasePlayerScore(incrementValue);
    }
+
+   public void DestroyCube()
+   {
+      Destroy(gameObject);
+   }
 }
