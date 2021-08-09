@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Shootable
   - CollectableCube
+  - GroundPart
   layers:
   - Default
   - TransparentFX

@@ -41,6 +41,7 @@ public class BombDestroy : MonoBehaviour
     {
         foreach (Collider effectedObject in effectedColliders)
         {
+            // if((gameObject.GetComponent("YourDesiredScript") as YourDesiredScript) != null) ask this.
             _neutralCube = effectedObject.GetComponent<NeutralCubeCollect>();
             _explosionEffectedObject = effectedObject.GetComponent<IExplosionMove>();
             if (_explosionEffectedObject != null)
