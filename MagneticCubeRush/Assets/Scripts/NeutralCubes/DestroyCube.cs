@@ -10,6 +10,7 @@ public class DestroyCube : MonoBehaviour
     private Renderer _renderer;
     private NeutralCubeCollect cubeCollect;
     private MoveToPlayer _moveToPlayer;
+    private bool finishAction = false;
 
     private void Start()
     {
@@ -18,6 +19,7 @@ public class DestroyCube : MonoBehaviour
         _renderer = GetComponent<Renderer>();
     }
 
+    /*
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Detector"))
@@ -27,11 +29,21 @@ public class DestroyCube : MonoBehaviour
             //cubeCollect.DestroyCube();
         }
     }
+    */
+    private void Update()
+    {
+        if (_moveToPlayer.distanceToCollector <= 10f && !finishAction)
+        {
+            BehaviourAfterFinishLine();
+        }
+        
+    }
 
     private void BehaviourAfterFinishLine()
     {
         _renderer.material.color = Color.yellow;
         _moveToPlayer.NCubeState = MoveToPlayer.NeutralCubeState.Follow_Collector;
         cubeCollect.CollectedByPlayer(1);
+        finishAction = true;
     }
 }

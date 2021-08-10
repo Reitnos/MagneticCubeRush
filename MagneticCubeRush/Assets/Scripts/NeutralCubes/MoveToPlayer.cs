@@ -10,10 +10,11 @@ public class MoveToPlayer : MonoBehaviour
     private Rigidbody rb;
     public float followSpeed = 10f;
 
-    public float destroyRange = 3f;
+    public float destroyRange = 3;
+    public float distanceToCollector;
 
-    
- //   private bool detectedByPlayer = false
+
+    //   private bool detectedByPlayer = false
  public NeutralCubeState NCubeState = NeutralCubeState.Standing;
    
     private GameObject player;
@@ -22,6 +23,7 @@ public class MoveToPlayer : MonoBehaviour
     {
         Vector3 PlayerDestination = (player.transform.position - this.gameObject.transform.position);
         Vector3 CollectorDestination = (collector.transform.position - this.gameObject.transform.position);
+        distanceToCollector = CollectorDestination.magnitude;
         //CanSeePlayer(PlayerDestination);
        /*
         if (detectedByPlayer)
