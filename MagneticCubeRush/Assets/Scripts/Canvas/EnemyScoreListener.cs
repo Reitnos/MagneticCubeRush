@@ -16,5 +16,8 @@ public class EnemyScoreListener : MonoBehaviour
         _enemyScore = lastScore.ToString();
         GetComponent<TextMeshProUGUI>().text = _enemyScore;
     }
-    
+    private void OnDestroy()
+    {
+        ScoreTexts.Instance().enemyScoreChanged -= ChangeScore;
+    }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -15,5 +16,10 @@ public class PlayerScoreListener : MonoBehaviour
     {
         _playerScore = lastScore.ToString();
         GetComponent<TextMeshProUGUI>().text = _playerScore;
+    }
+
+    private void OnDestroy()
+    {
+        ScoreTexts.Instance().playerScoreChanged -= ChangeScore;
     }
 }
