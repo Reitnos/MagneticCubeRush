@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class MobileTouchControl : MonoBehaviour
 {
-   
+
+    private IPlayerMobileControl _mobileControl;
     private Touch theTouch;
     private Vector2 touchStartPosition, touchEndPosition;
-    public float moveSpeed = 10f;
+   
     private Rigidbody rb;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        _mobileControl = GetComponent<IPlayerMobileControl>();
     }
 
     void Update()
@@ -31,12 +33,17 @@ public class MobileTouchControl : MonoBehaviour
 
                 float diffx = touchEndPosition.x - touchStartPosition.x;
                 float diffz = touchEndPosition.y - touchStartPosition.y;
-                Vector3 direction = new Vector3(diffx, 0, diffz).normalized;
-                Vector3 movementVec = direction * moveSpeed;
-
+                Vector3 direction = new Vector3(diffx, 0, diffz);
+                _mobileControl.Move(direction);
+                
+                // Vector3 direction = new Vector3(diffx, 0, diffz).normalized;
+                // Vector3 movementVec = direction * moveSpeed;
+                /*
                 transform.forward = direction;
                 movementVec.y = rb.velocity.y;
                 rb.velocity = movementVec;
+                */
+
             }
         }
       

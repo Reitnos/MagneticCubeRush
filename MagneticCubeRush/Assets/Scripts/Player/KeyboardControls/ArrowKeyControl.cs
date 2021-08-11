@@ -14,12 +14,12 @@ public class ArrowKeyControl : MonoBehaviour
     
     private bool goingForward = true;
    
-    private IPlayerMovement player;
+    private IPlayerMovementKeyboard player;
 
 
     private void Awake()
     {
-        player = GetComponent<IPlayerMovement>();
+        player = GetComponent<IPlayerMovementKeyboard>();
     }
 
     void FixedUpdate()
