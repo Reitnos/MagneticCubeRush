@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public class BombDestroy : MonoBehaviour
@@ -54,8 +55,14 @@ public class BombDestroy : MonoBehaviour
 
             if (_neutralCube != null)
             {
-                _neutralCube.CollectedByNPC(1);
-                _neutralCube.DestroyCube();
+                // if neutral cubes are not already in the collection state by player.
+                MoveToPlayer cubeMove = effectedObject.GetComponent<MoveToPlayer>();
+                if (cubeMove.NCubeState != MoveToPlayer.NeutralCubeState.Follow_Collector)
+                {
+                    _neutralCube.CollectedByNPC(1);
+                    _neutralCube.DestroyCube();     
+                }
+               
             }
             
             
