@@ -8,6 +8,7 @@ TagManager:
   - CollectableCube
   - GroundPart
   - Detector
+  - Obstacle
   layers:
   - Default
   - TransparentFX

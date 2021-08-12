@@ -61,7 +61,7 @@ public class MoveToPlayer : MonoBehaviour
         {
             Vector3 direction = player.transform.position - transform.position;
             Ray ray = new Ray(transform.position + Vector3.up, direction);
-
+            
 
             if (Physics.Raycast(ray, out RaycastHit hit, followPlayerDistance))
             {

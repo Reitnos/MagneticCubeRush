@@ -3,17 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+
 public class ObjectPool : MonoBehaviour
 {
-    [SerializeField] private int listSize;
-    private Dictionary<string, Queue<GameObject>> objectPool = new Dictionary<string, Queue<GameObject>>();
     
+    private Dictionary<string, Queue<GameObject>> objectPool = new Dictionary<string, Queue<GameObject>>();
 
-    private void Update()
-    {
-        listSize = objectPool.Count;
-    }
-
+  
+    
     
     // Get an Object from the pool.
     public GameObject GetObject(GameObject gameObject)

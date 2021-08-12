@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1249979539449309035}
   - component: {fileID: 1249979539449309032}
   - component: {fileID: 1249979539449309033}
+  - component: {fileID: 5013109894683801622}
   - component: {fileID: 1249979539449309038}
   - component: {fileID: 3364110156768912591}
   - component: {fileID: 2258017002370987088}
@@ -99,6 +100,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5013109894683801622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249979539449309036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d2e09d7af0d7504292fe172d4006f3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &1249979539449309038
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -141,6 +154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   followPlayerDistance: 10
   followSpeed: 2
+  destroyRange: 3
+  distanceToCollector: 0
+  NCubeState: 0
 --- !u!114 &8153053115828716465
 MonoBehaviour:
   m_ObjectHideFlags: 0

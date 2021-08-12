@@ -46,4 +46,13 @@ public class DestroyCube : MonoBehaviour
         cubeCollect.CollectedByPlayer(1);
         finishAction = true;
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            cubeCollect.CollectedByNPC(1);
+            cubeCollect.DestroyCube();
+        }
+    }
 }

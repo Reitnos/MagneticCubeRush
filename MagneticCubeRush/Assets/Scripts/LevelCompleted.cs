@@ -6,21 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class LevelCompleted : MonoBehaviour
 {
-    public int numOfCubesToPass;
+    
     private ScoreTexts scoreScript;
     void Start()
     {
         scoreScript = FindObjectOfType<ScoreTexts>();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         CheckScoreAndGoNextLevel();
     }
 
     private void CheckScoreAndGoNextLevel()
     {
-        if (scoreScript.PlayerScore + scoreScript.EnemyScore >= numOfCubesToPass)
+        if (scoreScript.PlayerScore + scoreScript.EnemyScore >= NumberOfCubesInScene.numOfCubes)
         {
             if (scoreScript.PlayerScore > scoreScript.EnemyScore) 
             {
