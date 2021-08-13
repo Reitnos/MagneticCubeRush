@@ -8,9 +8,11 @@ public class LevelCompleted : MonoBehaviour
 {
     
     private ScoreTexts scoreScript;
+    private SceneCubeCount cubeCountScript;
     void Start()
     {
         scoreScript = FindObjectOfType<ScoreTexts>();
+        cubeCountScript = FindObjectOfType<SceneCubeCount>();
     }
 
     private void LateUpdate()
@@ -20,7 +22,8 @@ public class LevelCompleted : MonoBehaviour
 
     private void CheckScoreAndGoNextLevel()
     {
-        if (scoreScript.PlayerScore + scoreScript.EnemyScore >= NumberOfCubesInScene.numOfCubes)
+        
+        if (scoreScript.PlayerScore + scoreScript.EnemyScore >= cubeCountScript.GetCount())
         {
             if (scoreScript.PlayerScore > scoreScript.EnemyScore) 
             {
@@ -28,6 +31,7 @@ public class LevelCompleted : MonoBehaviour
             }
             else
             {
+                
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             
