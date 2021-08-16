@@ -9624,10 +9624,7 @@ GameObject:
   - component: {fileID: 450645777219157745}
   - component: {fileID: 450645777219157744}
   - component: {fileID: 5595141296585715016}
-  - component: {fileID: 450645777219157749}
-  - component: {fileID: 450645777219157746}
   - component: {fileID: 450645777219157750}
-  - component: {fileID: 932333461644063740}
   - component: {fileID: -4881565440346675011}
   m_Layer: 0
   m_Name: Player
@@ -9769,32 +9766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6952d2490bdf57545980a0e231e5ccfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &450645777219157749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450645777219157759}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 490ec4649ad407448a3fbb88ae0f36d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 20
-  rotationSpeed: 200
---- !u!114 &450645777219157746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450645777219157759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7b0452d8b0351e4791e9cbeb0640370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &450645777219157750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9805,18 +9776,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed29d58323ced3a478c91cedb70da483, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &932333461644063740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 450645777219157759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7dbdc66a8e785d348876a290dca546cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &-4881565440346675011

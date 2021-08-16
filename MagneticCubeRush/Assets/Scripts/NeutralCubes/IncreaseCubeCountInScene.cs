@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NumberOfCubesInScene : MonoBehaviour
+public class IncreaseCubeCountInScene : MonoBehaviour
 {
     private SceneCubeCount cubeCountScript;
 

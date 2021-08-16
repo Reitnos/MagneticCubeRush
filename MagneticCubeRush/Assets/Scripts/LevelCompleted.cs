@@ -23,7 +23,10 @@ public class LevelCompleted : MonoBehaviour
 
     private void CheckScoreAndGoNextLevel()
     {
-        
+        if (scoreScript.EnemyScore >= Math.Ceiling(cubeCountScript.GetCount() / 2f))
+        {
+            LoadThisSceneAgain();
+        }
         if (scoreScript.PlayerScore + scoreScript.EnemyScore >= cubeCountScript.GetCount())
         {
             if (scoreScript.PlayerScore > scoreScript.EnemyScore) 
@@ -32,10 +35,7 @@ public class LevelCompleted : MonoBehaviour
                 Invoke("LoadNextScene",2f);
 
             }
-            else
-            {
-                LoadThisSceneAgain();
-            }
+           
             
         }
     }
