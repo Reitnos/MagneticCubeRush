@@ -6,48 +6,48 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level-1.unity
+    path: Assets/Scenes/LandscapeScenes/Level-1.unity
     guid: b775f2193c69dd14686a4e532510feee
   - enabled: 1
-    path: Assets/Scenes/Level-2.unity
+    path: Assets/Scenes/LandscapeScenes/Level-2.unity
     guid: 81f6066114c594a4aaede389f0b623a6
   - enabled: 1
-    path: Assets/Scenes/Level-3.unity
+    path: Assets/Scenes/LandscapeScenes/Level-3.unity
     guid: ab75920c2aa26c8409b25e3b2d56791f
   - enabled: 1
-    path: Assets/Scenes/Level-4.unity
+    path: Assets/Scenes/LandscapeScenes/Level-4.unity
     guid: 505ca08b7171845449b9b6a4307d1fc3
   - enabled: 1
-    path: Assets/Scenes/Level-5.unity
+    path: Assets/Scenes/LandscapeScenes/Level-5.unity
     guid: 7bc25c57f8e13d14e85c79878a76cb48
   - enabled: 1
-    path: Assets/Scenes/Level-6.unity
+    path: Assets/Scenes/LandscapeScenes/Level-6.unity
     guid: de65ccf256fda02439779c8c1bb22ca4
   - enabled: 1
-    path: Assets/Scenes/Level-7.unity
+    path: Assets/Scenes/LandscapeScenes/Level-7.unity
     guid: db2fc70c27f2b014687bc9dcc8e275b1
   - enabled: 1
-    path: Assets/Scenes/Level-8.unity
+    path: Assets/Scenes/LandscapeScenes/Level-8.unity
     guid: 2a939b63a0282754bbffadf13bf19d4c
   - enabled: 1
-    path: Assets/Scenes/Level-9.unity
+    path: Assets/Scenes/LandscapeScenes/Level-9.unity
     guid: 243baa1e4c34cac468513b3b6fb8f627
   - enabled: 1
-    path: Assets/Scenes/Level-10.unity
+    path: Assets/Scenes/LandscapeScenes/Level-10.unity
     guid: 9d244c88bca593b44a60915e85a7433e
   - enabled: 1
-    path: Assets/Scenes/Level-11.unity
+    path: Assets/Scenes/LandscapeScenes/Level-11.unity
     guid: efa181225d837e247b20676efbfa7833
   - enabled: 1
-    path: Assets/Scenes/Level-12.unity
+    path: Assets/Scenes/LandscapeScenes/Level-12.unity
     guid: 01ca692b12ce2a14298e08b310adf393
   - enabled: 1
-    path: Assets/Scenes/Level-13.unity
+    path: Assets/Scenes/LandscapeScenes/Level-13.unity
     guid: b7bc65aff73483b43a72fbc39d623979
   - enabled: 1
-    path: Assets/Scenes/Level-14.unity
+    path: Assets/Scenes/LandscapeScenes/Level-14.unity
     guid: 35a7688503e0ffc4d82a28858cb34ff7
   - enabled: 1
-    path: Assets/Scenes/Level-15.unity
+    path: Assets/Scenes/LandscapeScenes/Level-15.unity
     guid: 06c6ab5b25498a5479f229acdf25bd97
   m_configObjects: {}
