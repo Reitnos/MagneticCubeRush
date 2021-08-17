@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerVelocityMovementMobile : MonoBehaviour, IPlayerMobileControl
 {
     private Rigidbody rb;
-    private float moveSpeed = 20f;
+    public float moveSpeed = 0.035f;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -13,7 +13,8 @@ public class PlayerVelocityMovementMobile : MonoBehaviour, IPlayerMobileControl
 
     public void Move(Vector3 directionVector)
     {
-        Vector3 velocityVector = directionVector.normalized * moveSpeed;
+        // Vector3 velocityVector = directionVector.normalized * moveSpeed;
+        Vector3 velocityVector = directionVector.magnitude * directionVector.normalized * moveSpeed;
         transform.forward = directionVector.normalized;
         velocityVector.y = rb.velocity.y;
         rb.velocity = velocityVector;

@@ -13,6 +13,8 @@ public class MoveToPlayer : MonoBehaviour
     public float destroyRange = 3;
     public float distanceToCollector;
 
+    private PlayerObstacleInteraction _playerObstacleInteraction;
+
 
     //   private bool detectedByPlayer = false
  public NeutralCubeState NCubeState = NeutralCubeState.Standing;
@@ -51,7 +53,10 @@ public class MoveToPlayer : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
         collector = GameObject.Find("Collector");
-        
+        _playerObstacleInteraction = FindObjectOfType<PlayerObstacleInteraction>();
+        // subscribe to player collision with obstacle so that cubes can change to state Standing.
+        _playerObstacleInteraction.playerCollidedWithObstacle += StopFollowingPlayer; 
+
     }
 
     void CanSeePlayer(Vector3 destination)
@@ -76,6 +81,13 @@ public class MoveToPlayer : MonoBehaviour
 
     }
 
+    void StopFollowingPlayer()
+    {
+        if (NCubeState == NeutralCubeState.Follow_Player)
+        {
+            NCubeState = NeutralCubeState.Standing;
+        }
+    }
     void FollowPlayer(Vector3 destination)
     {
         rb.MovePosition(transform.position + destination * Time.deltaTime * followSpeed);

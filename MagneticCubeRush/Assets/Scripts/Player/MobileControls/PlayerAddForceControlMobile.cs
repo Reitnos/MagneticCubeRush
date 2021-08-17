@@ -14,6 +14,6 @@ public class PlayerAddForceControlMobile : MonoBehaviour, IPlayerMobileControl
     public void Move(Vector3 directionVector)
     {
         transform.forward = directionVector.normalized;
-        rb.AddForce(directionVector* (rb.mass /3f)) ;
+        rb.AddForce(directionVector* (rb.mass /2f)) ;
     }
 }

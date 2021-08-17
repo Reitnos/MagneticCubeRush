@@ -51,6 +51,15 @@ public class DestroyCube : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
+            CheckCubeStateAndIncreaseEnemyScore();
+        }
+    }
+
+    private void CheckCubeStateAndIncreaseEnemyScore()
+    {
+        MoveToPlayer moveToPlayer = GetComponent<MoveToPlayer>();
+        if (moveToPlayer.NCubeState != MoveToPlayer.NeutralCubeState.Follow_Collector)
+        {
             cubeCollect.CollectedByNPC(1);
             cubeCollect.DestroyCube();
         }

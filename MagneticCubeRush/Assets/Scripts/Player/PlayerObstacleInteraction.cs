@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerObstacleInteraction : MonoBehaviour
 {
     private Vector3 startPosition, startForward;
+    public event Action playerCollidedWithObstacle;
     private void Start()
     {
         startPosition = transform.position;
@@ -16,8 +17,19 @@ public class PlayerObstacleInteraction : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            transform.position = startPosition;
-            transform.forward = startForward;
+            SetPositionToStart();
+            InvokeCollisionEvent();
         }
+    }
+
+    private void InvokeCollisionEvent()
+    {
+        playerCollidedWithObstacle?.Invoke();
+    }
+
+    private void SetPositionToStart()
+    {
+        transform.position = startPosition;
+        transform.forward = startForward;
     }
 }
