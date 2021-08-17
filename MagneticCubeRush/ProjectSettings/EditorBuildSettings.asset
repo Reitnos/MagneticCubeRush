@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PortraitScenes/P-15.unity
     guid: 18a5b7c23746dd34faf5fb20518f79a1
+  - enabled: 1
+    path: Assets/Scenes/PortraitScenes/EndScene.unity
+    guid: 8d290d51f25e35f4183692ca5a6dff1f
   m_configObjects: {}

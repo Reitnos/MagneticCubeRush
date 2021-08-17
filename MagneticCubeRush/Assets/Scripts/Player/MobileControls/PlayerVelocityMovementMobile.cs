@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerVelocityMovementMobile : MonoBehaviour, IPlayerMobileControl
 {
     private Rigidbody rb;
-    public float moveSpeed = 0.035f;
+    public float moveSpeed = 0.05f;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();

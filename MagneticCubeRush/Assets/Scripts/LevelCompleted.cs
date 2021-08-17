@@ -9,7 +9,8 @@ public class LevelCompleted : MonoBehaviour
     
     private ScoreTexts scoreScript;
     private SceneCubeCount cubeCountScript;
-    public GameObject levelFinishAnimation;
+    public GameObject levelFinishAnimationWin;
+    public GameObject levelFinishAnimationLose;
     void Start()
     {
         scoreScript = FindObjectOfType<ScoreTexts>();
@@ -25,13 +26,15 @@ public class LevelCompleted : MonoBehaviour
     {
         if (scoreScript.EnemyScore >= Math.Ceiling(cubeCountScript.GetCount() / 2f))
         {
-            LoadThisSceneAgain();
+            levelFinishAnimationLose.SetActive(true);
+            
+            Invoke("LoadThisSceneAgain",2f);
         }
         if (scoreScript.PlayerScore + scoreScript.EnemyScore >= cubeCountScript.GetCount())
         {
             if (scoreScript.PlayerScore > scoreScript.EnemyScore) 
             {
-                levelFinishAnimation.SetActive(true);
+                levelFinishAnimationWin.SetActive(true);
                 Invoke("LoadNextScene",2f);
 
             }
