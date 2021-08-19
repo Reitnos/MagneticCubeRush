@@ -49,7 +49,11 @@ public class AdManager : MonoBehaviour
     }
     public void RequestBanner()
     {
-        
+        if (this.bannerAd != null)
+        {
+            this.bannerAd.Destroy();
+        }
+
         this.bannerAd = new BannerView(BannerAdId, AdSize.SmartBanner, AdPosition.Bottom);
         
         this.bannerAd.LoadAd(CreateAdRequest());
