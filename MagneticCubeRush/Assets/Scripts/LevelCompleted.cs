@@ -8,7 +8,7 @@ using GameAnalyticsSDK.Events;
 
 public class LevelCompleted : MonoBehaviour
 {
-    private int passedLevel;
+    private int currentLevel;
     private ScoreTexts scoreScript;
     private SceneCubeCount cubeCountScript;
     public GameObject levelFinishAnimationWin;
@@ -18,7 +18,7 @@ public class LevelCompleted : MonoBehaviour
         GameAnalytics.Initialize();
         scoreScript = FindObjectOfType<ScoreTexts>();
         cubeCountScript = FindObjectOfType<SceneCubeCount>();
-        passedLevel = SceneManager.GetActiveScene().buildIndex + 1;
+        currentLevel = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     private void LateUpdate()
@@ -49,13 +49,13 @@ public class LevelCompleted : MonoBehaviour
 
     private void LoadThisSceneAgain()
     {
-        GameAnalytics.NewProgressionEvent (GAProgressionStatus.Start,  "Level" + passedLevel.ToString() + "Re-tried"); 
+        GameAnalytics.NewProgressionEvent (GAProgressionStatus.Start,  "Level " + currentLevel.ToString() + " Failed"); 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void LoadNextScene()
     {
-        GameAnalytics.NewProgressionEvent (GAProgressionStatus.Complete,  "Level" + passedLevel.ToString() + "Completed"); 
+        GameAnalytics.NewProgressionEvent (GAProgressionStatus.Complete,  "Level " + currentLevel.ToString() + " Completed"); 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
