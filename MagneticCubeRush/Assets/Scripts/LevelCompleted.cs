@@ -3,18 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using GameAnalyticsSDK;
+using GameAnalyticsSDK.Events;
 
 public class LevelCompleted : MonoBehaviour
 {
-    
+    private int passedLevel;
     private ScoreTexts scoreScript;
     private SceneCubeCount cubeCountScript;
     public GameObject levelFinishAnimationWin;
     public GameObject levelFinishAnimationLose;
     void Start()
     {
+        GameAnalytics.Initialize();
         scoreScript = FindObjectOfType<ScoreTexts>();
         cubeCountScript = FindObjectOfType<SceneCubeCount>();
+        passedLevel = SceneManager.GetActiveScene().buildIndex + 1;
     }
 
     private void LateUpdate()
@@ -45,11 +49,13 @@ public class LevelCompleted : MonoBehaviour
 
     private void LoadThisSceneAgain()
     {
+        GameAnalytics.NewProgressionEvent (GAProgressionStatus.Start,  "Level" + passedLevel.ToString() + "Re-tried"); 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void LoadNextScene()
     {
+        GameAnalytics.NewProgressionEvent (GAProgressionStatus.Complete,  "Level" + passedLevel.ToString() + "Completed"); 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

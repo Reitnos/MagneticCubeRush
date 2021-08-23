@@ -3,6 +3,7 @@ using System;
 using System.Security.Cryptography;
 using JetBrains.Annotations;
 using UnityEngine;
+using GameAnalyticsSDK;
 
 
 public class AdManager : MonoBehaviour
@@ -18,6 +19,7 @@ public class AdManager : MonoBehaviour
     
     private BannerView bannerAd; 
     private RewardedInterstitialAd rewardedInterstitialAd;
+    
 
     public static AdManager instance;
 
@@ -38,7 +40,9 @@ public class AdManager : MonoBehaviour
     {
         MobileAds.Initialize(status => { });
         
+        this.bannerAd.OnAdOpening += this.HandleOnAdOpened;
         this.RequestRewardedInterstitial();
+        
     }
 
     
@@ -53,10 +57,14 @@ public class AdManager : MonoBehaviour
         {
             this.bannerAd.Destroy();
         }
-
+        
+        
+        
         this.bannerAd = new BannerView(BannerAdId, AdSize.SmartBanner, AdPosition.Bottom);
         
         this.bannerAd.LoadAd(CreateAdRequest());
+        
+        
     }
 
 
@@ -85,12 +93,27 @@ public class AdManager : MonoBehaviour
         if (error == null)
         {
             rewardedInterstitialAd = ad;
-         
+            rewardedInterstitialAd.OnAdFailedToPresentFullScreenContent += HandleAdFailedToPresent;
+            rewardedInterstitialAd.OnAdDidPresentFullScreenContent += HandleAdDidPresent;
+
         }
     }
-    
-    
-    
+    private void HandleAdFailedToPresent(object sender, AdErrorEventArgs args)
+    {
+        GameAnalytics.NewAdEvent(GAAdAction.FailedShow, GAAdType.RewardedVideo, "admob", "ca-app-pub-3940256099942544/5354046379");
+    }
 
+    private void HandleAdDidPresent(object sender, EventArgs args)
+    {
+        GameAnalytics.NewAdEvent(GAAdAction.Show, GAAdType.RewardedVideo, "admob", "ca-app-pub-3940256099942544/5354046379");
+    }
     
+    public void HandleOnAdOpened(object sender, EventArgs args)
+    {
+        GameAnalytics.NewAdEvent(GAAdAction.Clicked, GAAdType.Banner, "admob", "ca-app-pub-3940256099942544/6300978111");
+    }
+
+
+
+
 }
